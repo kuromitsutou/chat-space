@@ -36,13 +36,10 @@
 ## users table
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
+|name|string|null: false, add_index: true|
 |email|string|null: false|
 
 ### Association
 - has_many :members
 - has_many :messages
 - has_many :groups, through: :members
-
-### Index
-- add_index users,  :name
