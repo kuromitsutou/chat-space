@@ -50,6 +50,19 @@
     background-color: #FFFFFF;
     width: 100%;
     height: 100px;
+    padding: 0 40px;
+
+    .group-name{
+      font-size: 20px;
+      color: #333333;
+      padding-top: 35px;
+      padding-bottom: 15px;
+    }
+
+    .group-members{
+      font-size: 12px;
+      color: #999999;
+    }
   }
 
   .group-messages{
