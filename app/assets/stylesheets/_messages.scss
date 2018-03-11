@@ -22,6 +22,22 @@
   .member-groups{
     background-color: #2f3e51;
     height: 100%;
+    padding: 20px 20px 0;
+
+    .member-group{
+
+      .group-name{
+        font-size: 15px;
+        color: #FFFFFF;
+        margin-bottom: 5px;
+      }
+
+      .group-last-message{
+        font-size: 11px;
+        color: #FFFFFF;
+        margin-bottom: 40px;
+      }
+    }
   }
 }
 
