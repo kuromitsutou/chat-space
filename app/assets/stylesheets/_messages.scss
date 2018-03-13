@@ -119,9 +119,27 @@
   .message-column{
     background-color: #DDDDDD;
     width: 100%;
-    height: 100px;
+    height: 90px;
     box-sizing: border-box;
     position: fixed;
     bottom: 0;
+    padding: 20px 40px 20px 50px;
+
+    .input-space{
+      background-color: #FFFFFF;
+      height: 50px;
+      width: calc(100% - 440px);
+      float: left;
+    }
+
+    .send-button{
+      background-color: #38AEF0;
+      height: 20px;
+      float: left;
+      font-size: 16px;
+      color: #FFFFFF;
+      padding: 15px 40px;
+      margin-left: 25px;
+    }
   }
 }
