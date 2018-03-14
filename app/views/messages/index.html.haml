@@ -3,6 +3,10 @@
   .side-nav
     .user-info
       .user-name seo
+      = link_to "" do
+        %i.fa.fa-cog
+      = link_to "" do
+        %i.fa.fa-edit
     .member-groups
       %ul
         %li<
@@ -31,5 +35,7 @@
             .post-date 2016/09/22 06:16:55
             .post-message Good bye world!
     .message-column
-      .input-space
+      = text_field_tag :message, nil, class: "input-space", placeholder: "type a message" do
+        = link_to "" do
+          %i.fa.fa-image
       .send-button Send
