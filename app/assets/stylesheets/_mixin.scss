@@ -12,8 +12,8 @@
   box-sizing: border-box;
 }
 
-@mixin border($width, $style, $color){
+@mixin border($width, $color, $style){
   border-width: $width;
-  border-style: $style;
   border-color: $color;
+  border-style: $style;
 }
