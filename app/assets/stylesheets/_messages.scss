@@ -10,7 +10,7 @@
   box-sizing: border-box;
   float: left;
 
-  .user-info{
+   .user-info{
     background-color: #253141;
     width: 300px;
     height: 100px;
@@ -20,9 +20,7 @@
     vertical-align: middle;
 
     .user-name{
-      font-size: 16px;
-      font-weight: bold;
-      color: #FFFFFF;
+      @include font(16px, $white, bold);
       float: left;
     }
 
@@ -48,14 +46,12 @@
     .member-group{
 
       .group-name{
-        font-size: 15px;
-        color: #FFFFFF;
+        @include font(15px, $white);
         margin-bottom: 5px;
       }
 
       .group-last-message{
-        font-size: 11px;
-        color: #FFFFFF;
+        @include font(11px, $white);
         margin-bottom: 40px;
       }
     }
@@ -68,30 +64,26 @@
   float: left;
 
   .group-info{
-    background-color: #FFFFFF;
+    background-color: $white;
     height: 100px;
     box-sizing: border-box;
     padding: 0 40px;
 
     .group-name{
-      font-size: 20px;
-      color: #333333;
+      @include font(20px,  #333333);
       padding-top: 35px;
       padding-bottom: 15px;
       float: left;
     }
 
     .group-members{
-      font-size: 12px;
-      color: #999999;
+      @include font(12px, #999999);
       clear: both;
     }
 
     .group-edit-button{
+      @include font(12px, #72D1f7, bold);
       float: right;
-      font-size: 12px;
-      font-weight: bold;
-      color: #72D1F7;
       border-color: #72D1F7;
       border-style: solid;
       border-width: 2px;
@@ -110,21 +102,20 @@
     .group-message{
 
       .user-name{
-        font-size: 16px;
-        font-weight: bold;
-        color: #434A54;
+        @include font(16px, #434A54, bold);
         padding-bottom: 10px;
+        padding-right: 10px;
+        float: left;
       }
 
       .post-date{
-        font-size: 12px;
-        color: #999999;
+        @include font(12px, #999999);
       }
 
       .post-message{
-        font-size: 14px;
-        color: #434A54;
+        @include font(14px, #434A54);
         padding-bottom: 40px;
+        clear: both;
       }
     }
   }
@@ -139,12 +130,11 @@
     padding: 20px 40px 20px 50px;
 
     .input-space{
-      background-color: #FFFFFF;
+      @include font(12px, #DDDDDD);
+      background-color: $white;
       height: 50px;
       width: calc(100% - 440px);
       float: left;
-      font-size: 12px;
-      color: #DDDDDD;
       padding-left: 10px;
 
       .fa-image{
@@ -154,11 +144,10 @@
     }
 
     .send-button{
+      @include font(16px, $white);
       background-color: #38AEF0;
       height: 20px;
       float: left;
-      font-size: 16px;
-      color: #FFFFFF;
       padding: 15px 40px;
       margin-left: 25px;
     }
