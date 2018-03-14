@@ -10,13 +10,9 @@
     .member-groups
       %ul
         %li<
-          .member-group
-            .group-name sample
-            .group-last-message  Hello world
+          = render "member-group"
         %li<
-          .member-group
-            .group-name sample2
-            .group-last-message Good bye world
+          = render "member-group"
   .main-content
     .group-info
       .group-name sample
@@ -25,15 +21,9 @@
     .group-messages
       %ul
         %li<
-          .group-message
-            .user-name seo
-            .post-date 2016/21 06:10:56
-            .post-message Hello world!
+          = render "group-message"
         %li<
-          .group-message
-            .user-name neko
-            .post-date 2016/09/22 06:16:55
-            .post-message Good bye world!
+          = render "group-message"
     .message-column
       = text_field_tag :message, nil, class: "input-space", placeholder: "type a message" do
         = link_to "" do
