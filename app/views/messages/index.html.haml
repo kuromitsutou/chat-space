@@ -2,7 +2,7 @@
 
   .side-nav
     .user-info
-      .user-name seo
+      .user-info__user-name seo
       = link_to "" do
         %i.fa.fa-cog
       = link_to "" do
@@ -15,9 +15,9 @@
           = render "member-group"
   .main-content
     .group-info
-      .group-name sample
-      .group-edit-button Edit
-      .group-members Members: seo, neko
+      .group-info__group-name sample
+      .group-info__group-edit-button Edit
+      .group-info__group-members Members: seo, neko
     .group-messages
       %ul
         %li<
@@ -25,7 +25,7 @@
         %li<
           = render "group-message"
     .message-column
-      = text_field_tag :message, nil, class: "input-space", placeholder: "type a message" do
+      = text_field_tag :message, nil, class: "message-column__input-space", placeholder: "type a message" do
         = link_to "" do
           %i.fa.fa-image
-      .send-button Send
+      .message-column__send-button Send

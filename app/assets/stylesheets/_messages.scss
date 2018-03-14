@@ -6,11 +6,11 @@
 .side-nav{
   @include block(300px, 100vh, $white, left);
 
-   .user-info{
+  .user-info{
     @include block(300px, 100px, $midnightblue);
     padding: 45px 20px;
 
-    .user-name{
+    &__user-name{
       @include font(16px, $white, bold);
       float: left;
     }
@@ -33,12 +33,12 @@
 
     .member-group{
 
-      .group-name{
+      &__group-name{
         @include font(15px, $white);
         margin-bottom: 5px;
       }
 
-      .group-last-message{
+      &__group-last-message{
         @include font(11px, $white);
         margin-bottom: 40px;
       }
@@ -53,18 +53,18 @@
     @include block(100%, 100px, $white);
     padding: 0 40px;
 
-    .group-name{
+    &__group-name{
       @include font(20px, $black);
       padding: 35px 0 15px;
       float: left;
     }
 
-    .group-members{
+    &__group-members{
       @include font(12px, $gray);
       clear: both;
     }
 
-    .group-edit-button{
+    &__group-edit-button{
       @include font(12px, $lightskyblue, bold);
       @include border(2px, $lightskyblue, solid);
       padding: 10px 20px;
@@ -74,24 +74,24 @@
   }
 
   .group-messages{
-    @include block(100%, 100%, #FAFAFA);
+    @include block(100%, 100%, $ivory);
     min-height: calc(100vh - 100px);
     padding: 46px 40px 0;
 
     .group-message{
 
-      .user-name{
+      &__user-name{
         @include font(16px, $slategray , bold);
         padding: 0 10px 10px 0;
         float: left;
       }
 
-      .post-date{
+      &__post-date{
         @include font(12px, $gray);
         padding-top: 4px;
       }
 
-      .post-message{
+      &__post-message{
         @include font(14px, $slategray);
         padding-bottom: 40px;
         clear: both;
@@ -105,7 +105,7 @@
     bottom: 0;
     padding: 20px 40px 20px 50px;
 
-    .input-space{
+    &__input-space{
       @include font(12px, $floralwhite);
       @include block(#{calc(100% - 440px)}, 50px, $white, left, content-box);
       padding-left: 10px;
@@ -116,7 +116,7 @@
       }
     }
 
-    .send-button{
+    &__send-button{
       @include font(16px, $white);
       @include block(30px, 23px, #38AEF0, left, content-box);
       padding: 15px 40px;
