@@ -7,7 +7,7 @@
   @include block(300px, 100vh, $white, left);
 
    .user-info{
-    @include block(300px, 100px, #253141);
+    @include block(300px, 100px, $midnightblue);
     padding: 45px 20px;
 
     .user-name{
@@ -28,7 +28,7 @@
   }
 
   .member-groups{
-    @include block(300px, 100%, #2f3e51);
+    @include block(300px, 100%, $navy);
     padding: 20px 20px 0;
 
     .member-group{
@@ -54,19 +54,19 @@
     padding: 0 40px;
 
     .group-name{
-      @include font(20px,  #333333);
+      @include font(20px, $black);
       padding: 35px 0 15px;
       float: left;
     }
 
     .group-members{
-      @include font(12px, #999999);
+      @include font(12px, $gray);
       clear: both;
     }
 
     .group-edit-button{
-      @include font(12px, #72D1f7, bold);
-      @include border(2px, #72D1F7, solid);
+      @include font(12px, $lightskyblue, bold);
+      @include border(2px, $lightskyblue, solid);
       padding: 10px 20px;
       margin-top: 28px;
       float: right;
@@ -81,18 +81,18 @@
     .group-message{
 
       .user-name{
-        @include font(16px, #434A54, bold);
+        @include font(16px, $slategray , bold);
         padding: 0 10px 10px 0;
         float: left;
       }
 
       .post-date{
-        @include font(12px, #999999);
+        @include font(12px, $gray);
         padding-top: 4px;
       }
 
       .post-message{
-        @include font(14px, #434A54);
+        @include font(14px, $slategray);
         padding-bottom: 40px;
         clear: both;
       }
@@ -100,13 +100,13 @@
   }
 
   .message-column{
-    @include block(100%, 90px, #DDDDDD);
+    @include block(100%, 90px, $floralwhite);
     position: fixed;
     bottom: 0;
     padding: 20px 40px 20px 50px;
 
     .input-space{
-      @include font(12px, #DDDDDD);
+      @include font(12px, $floralwhite);
       @include block(#{calc(100% - 440px)}, 50px, $white, left, content-box);
       padding-left: 10px;
 
