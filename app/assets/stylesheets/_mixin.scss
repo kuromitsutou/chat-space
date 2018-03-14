@@ -4,12 +4,12 @@
   font-weight: $weight;
 }
 
-@mixin block($width, $height, $color: #FFFFFF, $float: none){
+@mixin block($width, $height, $color: $white, $float: none, $box-sizing: border-box){
   width: $width;
   height: $height;
   background-color: $color;
   float: $float;
-  box-sizing: border-box;
+  box-sizing: $box-sizing;
 }
 
 @mixin border($width, $color, $style){

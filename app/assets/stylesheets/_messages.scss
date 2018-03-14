@@ -1,23 +1,14 @@
 .wrapper{
-  width: 100vw;
-  box-sizing: border-box;
+  @include block(100vw, 100%);
   overflow: hidden;
 }
 
 .side-nav{
-  width: 300px;
-  height: 100vh;
-  box-sizing: border-box;
-  float: left;
+  @include block(300px, 100vh, $white, left);
 
    .user-info{
-    background-color: #253141;
-    width: 300px;
-    height: 100px;
-    box-sizing: border-box;
-    padding: 0 20px;
-    display: table-cell;
-    vertical-align: middle;
+    @include block(300px, 100px, #253141);
+    padding: 45px 20px;
 
     .user-name{
       @include font(16px, $white, bold);
@@ -25,22 +16,19 @@
     }
 
     .fa-cog{
-      color: white;
+      color: $white;
       float: right;
       margin-left: 10px;
     }
 
     .fa-edit{
-      color: white;
+      color: $white;
       float: right;
     }
   }
 
   .member-groups{
-    background-color: #2f3e51;
-    width: 300px;
-    height: 100%;
-    box-sizing: border-box;
+    @include block(300px, 100%, #2f3e51);
     padding: 20px 20px 0;
 
     .member-group{
@@ -59,20 +47,15 @@
 }
 
 .main-content{
-  width: calc(100vw - 317px);
-  box-sizing: border-box;
-  float: left;
+  @include block(#{calc(100vw - 317px)}, 100%, $white, left);
 
   .group-info{
-    background-color: $white;
-    height: 100px;
-    box-sizing: border-box;
+    @include block(100%, 100px, $white);
     padding: 0 40px;
 
     .group-name{
       @include font(20px,  #333333);
-      padding-top: 35px;
-      padding-bottom: 15px;
+      padding: 35px 0 15px;
       float: left;
     }
 
@@ -83,30 +66,29 @@
 
     .group-edit-button{
       @include font(12px, #72D1f7, bold);
-      float: right;
+      @include border(2px, #72D1F7, solid);
       padding: 10px 20px;
       margin-top: 28px;
+      float: right;
     }
   }
 
   .group-messages{
-    background-color: #FAFAFA;
-    width: 100%;
+    @include block(100%, 100%, #FAFAFA);
     min-height: calc(100vh - 100px);
-    box-sizing: border-box;
     padding: 46px 40px 0;
 
     .group-message{
 
       .user-name{
         @include font(16px, #434A54, bold);
-        padding-bottom: 10px;
-        padding-right: 10px;
+        padding: 0 10px 10px 0;
         float: left;
       }
 
       .post-date{
         @include font(12px, #999999);
+        padding-top: 4px;
       }
 
       .post-message{
@@ -118,20 +100,14 @@
   }
 
   .message-column{
-    background-color: #DDDDDD;
-    width: 100%;
-    height: 90px;
-    box-sizing: border-box;
+    @include block(100%, 90px, #DDDDDD);
     position: fixed;
     bottom: 0;
     padding: 20px 40px 20px 50px;
 
     .input-space{
       @include font(12px, #DDDDDD);
-      background-color: $white;
-      height: 50px;
-      width: calc(100% - 440px);
-      float: left;
+      @include block(#{calc(100% - 440px)}, 50px, $white, left, content-box);
       padding-left: 10px;
 
       .fa-image{
@@ -142,9 +118,7 @@
 
     .send-button{
       @include font(16px, $white);
-      background-color: #38AEF0;
-      height: 20px;
-      float: left;
+      @include block(30px, 23px, #38AEF0, left, content-box);
       padding: 15px 40px;
       margin-left: 25px;
     }
