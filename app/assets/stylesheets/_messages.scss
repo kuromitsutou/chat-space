@@ -3,6 +3,13 @@
   overflow: hidden;
 }
 
+.top-notification{
+  @include font(11px, $white);
+  @include block(100%, 25px, #38AEf0);
+  padding: 6px 0;
+  text-align: center;
+}
+
 .side-nav{
   @include block(300px, 100vh, $white, left);
 
