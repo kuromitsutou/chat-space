@@ -1,5 +1,6 @@
 @import "font-awesome";
-@import "./reset";
-@import "./mixin/mixin";
-@import "./variable/variable";
-@import "./_messages";
+@import "reset";
+@import "mixin/mixin";
+@import "variable/variable";
+@import "messages";
+@import "modules/user";
