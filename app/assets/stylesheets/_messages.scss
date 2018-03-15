@@ -1,0 +1,133 @@
+.wrapper{
+  @include block(100vw, 100%);
+  overflow: hidden;
+}
+
+.top-notification{
+  @include font(11px, $white);
+  @include block(100%, 25px, #38AEf0);
+  padding: 6px 0;
+  text-align: center;
+}
+
+.side-nav{
+  @include block(300px, 100vh, $white, left);
+
+  .user-info{
+    @include block(300px, 100px, $midnightblue);
+    padding: 45px 20px;
+
+    &__user-name{
+      @include font(16px, $white, bold);
+      float: left;
+    }
+
+    .fa-cog{
+      color: $white;
+      float: right;
+      margin-left: 10px;
+    }
+
+    .fa-edit{
+      color: $white;
+      float: right;
+    }
+  }
+
+  .member-groups{
+    @include block(300px, 100%, $navy);
+    padding: 20px 20px 0;
+
+    .member-group{
+
+      &__group-name{
+        @include font(15px, $white);
+        margin-bottom: 5px;
+      }
+
+      &__group-last-message{
+        @include font(11px, $white);
+        margin-bottom: 40px;
+      }
+    }
+  }
+}
+
+.main-content{
+  @include block(#{calc(100vw - 317px)}, 100%, $white, left);
+
+  .header-group-info{
+    @include block(100%, 100px, $white);
+    padding: 0 40px;
+
+    &__group-name{
+      @include font(20px, $black);
+      padding: 35px 0 15px;
+      float: left;
+    }
+
+    &__group-members{
+      @include font(12px, $gray);
+      clear: both;
+    }
+
+    &__group-edit-button{
+      @include font(12px, $lightskyblue, bold);
+      @include border(2px, $lightskyblue, solid);
+      padding: 10px 20px;
+      margin-top: 28px;
+      float: right;
+    }
+  }
+
+  .group-messages{
+    @include block(100%, 100%, $ivory);
+    min-height: calc(100vh - 100px);
+    padding: 46px 40px 0;
+
+    .group-message{
+
+      &__user-name{
+        @include font(16px, $slategray , bold);
+        padding: 0 10px 10px 0;
+        float: left;
+      }
+
+      &__post-date{
+        @include font(12px, $gray);
+        padding-top: 4px;
+      }
+
+      &__post-message{
+        @include font(14px, $slategray);
+        padding-bottom: 40px;
+        clear: both;
+      }
+    }
+  }
+
+  .footer-message-column{
+    @include block(100%, 90px, $floralwhite);
+    position: fixed;
+    bottom: 0;
+    padding: 20px 40px 20px 50px;
+
+    &__input-space{
+      @include font(12px, $floralwhite);
+      @include block(#{calc(100% - 440px)}, 50px, $white, left, content-box);
+      padding-left: 10px;
+
+      .fa-image{
+        float: right;
+        padding: 15px 10px;
+      }
+    }
+
+    &__send-button{
+      @include font(16px, $white);
+      @include block(30px, 23px, #38AEF0, left, content-box);
+      padding: 15px 40px;
+      margin-left: 25px;
+    }
+  }
+}

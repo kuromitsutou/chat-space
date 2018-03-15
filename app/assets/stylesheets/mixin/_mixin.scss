@@ -1,0 +1,19 @@
+@mixin font($size, $color, $weight: normal){
+  font-size: $size;
+  color: $color;
+  font-weight: $weight;
+}
+
+@mixin block($width, $height, $color: $white, $float: none, $box-sizing: border-box){
+  width: $width;
+  height: $height;
+  background-color: $color;
+  float: $float;
+  box-sizing: $box-sizing;
+}
+
+@mixin border($width, $color, $style){
+  border-width: $width;
+  border-color: $color;
+  border-style: $style;
+}

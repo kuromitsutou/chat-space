@@ -1,0 +1,33 @@
+.wrapper
+  .top-notification チャットグループが作成されました
+
+  .side-nav
+    .user-info
+      .user-info__user-name seo
+      = link_to "" do
+        %i.fa.fa-cog
+      = link_to "" do
+        %i.fa.fa-edit
+    .member-groups
+      %ul
+        %li<
+          = render "member-group"
+        %li<
+          = render "member-group"
+
+  .main-content
+    .header-group-info
+      .header-group-info__group-name sample
+      .header-group-info__group-edit-button Edit
+      .header-group-info__group-members Members: seo, neko
+    .group-messages
+      %ul
+        %li<
+          = render "group-message"
+        %li<
+          = render "group-message"
+    .footer-message-column
+      = text_field_tag :message, nil, class: "footer-message-column__input-space", placeholder: "type a message" do
+        = link_to "" do
+          %i.fa.fa-image
+      .footer-message-column__send-button Send
