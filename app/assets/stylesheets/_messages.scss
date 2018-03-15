@@ -56,7 +56,7 @@
 .main-content{
   @include block(#{calc(100vw - 317px)}, 100%, $white, left);
 
-  .group-info{
+  .header-group-info{
     @include block(100%, 100px, $white);
     padding: 0 40px;
 
@@ -106,7 +106,7 @@
     }
   }
 
-  .message-column{
+  .footer-message-column{
     @include block(100%, 90px, $floralwhite);
     position: fixed;
     bottom: 0;

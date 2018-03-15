@@ -16,18 +16,18 @@
           = render "member-group"
 
   .main-content
-    .group-info
-      .group-info__group-name sample
-      .group-info__group-edit-button Edit
-      .group-info__group-members Members: seo, neko
+    .header-group-info
+      .header-group-info__group-name sample
+      .header-group-info__group-edit-button Edit
+      .header-group-info__group-members Members: seo, neko
     .group-messages
       %ul
         %li<
           = render "group-message"
         %li<
           = render "group-message"
-    .message-column
-      = text_field_tag :message, nil, class: "message-column__input-space", placeholder: "type a message" do
+    .footer-message-column
+      = text_field_tag :message, nil, class: "footer-message-column__input-space", placeholder: "type a message" do
         = link_to "" do
           %i.fa.fa-image
-      .message-column__send-button Send
+      .footer-message-column__send-button Send
