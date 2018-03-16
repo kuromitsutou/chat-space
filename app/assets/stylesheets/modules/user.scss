@@ -1,4 +1,10 @@
 .account-page {
+  .top-notation{
+    @include font(11px, $white);
+    @include block(100%, 25px, $orange);
+    padding: 6px 0;
+    text-align: center;
+  }
   .account-page__inner {
     width: 980px;
     margin: 60px auto;
