@@ -3,7 +3,7 @@
     .user-info
       .user-info__user-name
         = current_user.name
-      = link_to "" do
+      = link_to new_groups_path do
         %i.fa.fa-cog
       = link_to edit_users_path(current_user) do
         %i.fa.fa-edit
