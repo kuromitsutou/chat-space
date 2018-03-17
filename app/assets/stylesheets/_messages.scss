@@ -107,10 +107,16 @@
 
     &__input-space{
       @include font(12px, $floralwhite);
-      @include block(#{calc(100% - 440px)}, 50px, $white, left, content-box);
+      @include block(#{calc(100% - 480px)}, 50px, $white, left, content-box);
+      border: none;
       padding-left: 10px;
+    }
+
+    &__whitespace{
+      @include block(40px, 50px, $white, left, content-box);
 
       .fa-image{
+        color: $black;
         float: right;
         padding: 15px 10px;
       }

@@ -26,7 +26,8 @@
         %li<
           = render "group-message"
     .footer-message-column
-      = text_field_tag :message, nil, class: "footer-message-column__input-space", placeholder: "type a message" do
+      = text_field_tag :message, nil, class: "footer-message-column__input-space", placeholder: "type a message"
+      .footer-message-column__whitespace
         = link_to "" do
           %i.fa.fa-image
       .footer-message-column__send-button Send
