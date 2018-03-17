@@ -1,18 +1,19 @@
 .wrapper
-  .side-nav
-    .user-info
-      .user-info__user-name
-        = current_user.name
-      = link_to new_groups_path do
-        %i.fa.fa-cog
-      = link_to edit_user_path do
-        %i.fa.fa-edit
-    .member-groups
-      %ul
-        %li<
-          = render "member-group"
-        %li<
-          = render "member-group"
+  = render 'shared/side_bar'
+  / .side-nav
+  /   .user-info
+  /     .user-info__user-name
+  /       = current_user.name
+  /     = link_to new_groups_path do
+  /       %i.fa.fa-cog
+  /     = link_to edit_user_path do
+  /       %i.fa.fa-edit
+  /   .member-groups
+  /     %ul
+  /       %li<
+  /         = render "member-group"
+  /       %li<
+  /         = render "member-group"
 
   .main-content
     .header-group-info
