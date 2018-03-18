@@ -106,7 +106,7 @@
     padding: 20px 40px 20px 50px;
 
     &__input-space{
-      @include font(12px, $floralwhite);
+      @include font(12px, $black);
       @include block(#{calc(100% - 480px)}, 50px, $white, left, content-box);
       border: none;
       padding-left: 10px;
