@@ -106,7 +106,7 @@
     padding: 20px 40px 20px 50px;
 
     &__input-space{
-      @include font(12px, $floralwhite);
+      @include font(12px, $black);
       @include block(#{calc(100% - 480px)}, 50px, $white, left, content-box);
       border: none;
       padding-left: 10px;
@@ -118,13 +118,17 @@
       .fa-image{
         color: $black;
         float: right;
-        padding: 15px 10px;
+        padding: 16px 10px;
+      }
+
+      .hidden{
+        display: none;
       }
     }
 
     &__send-button{
       @include font(16px, $white);
-      @include block(30px, 23px, #38AEF0, left, content-box);
+      @include block(30px, 16px, #38AEF0, left, content-box);
       padding: 15px 40px;
       margin-left: 25px;
     }
