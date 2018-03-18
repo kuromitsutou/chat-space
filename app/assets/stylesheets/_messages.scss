@@ -118,13 +118,17 @@
       .fa-image{
         color: $black;
         float: right;
-        padding: 15px 10px;
+        padding: 16px 10px;
+      }
+
+      .hidden{
+        display: none;
       }
     }
 
     &__send-button{
       @include font(16px, $white);
-      @include block(30px, 23px, #38AEF0, left, content-box);
+      @include block(30px, 16px, #38AEF0, left, content-box);
       padding: 15px 40px;
       margin-left: 25px;
     }

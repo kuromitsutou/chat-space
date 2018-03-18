@@ -1,19 +1,5 @@
 .wrapper
   = render 'shared/side_bar'
-  / .side-nav
-  /   .user-info
-  /     .user-info__user-name
-  /       = current_user.name
-  /     = link_to new_groups_path do
-  /       %i.fa.fa-cog
-  /     = link_to edit_user_path do
-  /       %i.fa.fa-edit
-  /   .member-groups
-  /     %ul
-  /       %li<
-  /         = render "member-group"
-  /       %li<
-  /         = render "member-group"
 
   .main-content
     .header-group-info
@@ -22,13 +8,20 @@
       .header-group-info__group-members Members: seo, neko
     .group-messages
       %ul
-        %li<
-          = render "group-message"
-        %li<
-          = render "group-message"
+        - @messages.each do |message|
+          %li<
+            .group-message
+              .group-message__user-name
+                = message.user.name
+              .group-message__post-date
+                = message.created_at
+              .group-message__post-message
+                = message.body
+
     .footer-message-column
-      = text_field_tag :message, nil, class: "footer-message-column__input-space", placeholder: "type a message"
-      .footer-message-column__whitespace
-        = link_to "" do
+      = form_for [@group, @message] do |f|
+        = f.text_field :body, class: "footer-message-column__input-space", placeholder: "type a message"
+        = f.label :image, class: 'footer-message-column__whitespace' do
           %i.fa.fa-image
-      .footer-message-column__send-button Send
+          = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'footer-message-column__send-button'
