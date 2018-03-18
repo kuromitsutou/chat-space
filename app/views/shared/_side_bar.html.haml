@@ -2,7 +2,7 @@
   .user-info
     .user-info__user-name
       = current_user.name
-    = link_to new_groups_path do
+    = link_to new_group_path do
       %i.fa.fa-cog
     = link_to edit_user_path do
       %i.fa.fa-edit
@@ -10,8 +10,7 @@
     %ul
       - current_user.groups.each do |group|
         %li<
-          / = link_to group_messages_path(group) do
-          = link_to "" do
+          = link_to group_messages_path(group) do
             .member-group
               .member-group__group-name
                 = group.name
