@@ -5,6 +5,7 @@
 
 .side-nav{
   @include block(300px, 100vh, $white, left);
+  position: fixed;
 
   .user-info{
     @include block(300px, 100px, $midnightblue);
@@ -47,11 +48,13 @@
 }
 
 .main-content{
-  @include block(#{calc(100vw - 317px)}, 100%, $white, left);
+  @include block(100vw, 100%, $white, left);
+  padding-left: 300px;
 
   .header-group-info{
     @include block(100%, 100px, $white);
     padding: 0 40px;
+    position: fixed;
 
     &__group-name{
       @include font(20px, $black);
@@ -76,8 +79,8 @@
   .group-messages{
     @include block(100%, 100%, $ivory);
     min-height: calc(100vh - 190px);
-    padding: 46px 40px 0;
-
+    padding: #{calc(46px + 100px)} 40px 90px;
+    
     .group-message{
 
       &__user-name{
