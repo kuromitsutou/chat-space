@@ -13,4 +13,12 @@ class Group < ApplicationRecord
     end
   end
 
+  def group_user_names
+    user_names = []
+    users.each do |user|
+      user_names << user.name
+    end
+    return user_names.join(", ")
+  end
+
 end

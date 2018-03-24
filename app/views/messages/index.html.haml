@@ -5,7 +5,7 @@
     .header-group-info
       .header-group-info__group-name sample
       .header-group-info__group-edit-button Edit
-      .header-group-info__group-members Members: seo, neko
+      .header-group-info__group-members Members: #{@group.group_user_names}
     .group-messages
       -@messages.each do |message|
         = render 'message', message: message
