@@ -15,5 +15,5 @@
         = f.text_field :body, class: "footer-message-column__input-space textbox", placeholder: "type a message"
         = f.label :image, class: 'footer-message-column__whitespace' do
           %i.fa.fa-image
-          = f.file_field :image, class: 'hidden'
+          = f.file_field :image, class: 'hidden image'
         = f.submit 'Send', class: 'footer-message-column__send-button'

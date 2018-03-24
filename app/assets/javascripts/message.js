@@ -32,6 +32,7 @@ $(function(){
       var html = buildHTML(data);
       $('.group-messages').append(html);
       $('.textbox').val('');
+      $('.image').val('');
       $('html,body').animate({scrollTop: $('html,body').prop("scrollHeight")});
       $('.footer-message-column__send-button').prop('disabled',false);
     })
