@@ -1,7 +1,23 @@
 $(function(){
+  function buildHTML(message){
+    var html = `<div class='group-message'>
+                  <div class='group-message__user-name'>
+                  ${ message.name }
+                  </div>
+                  <div class='group-message__post-date'>
+                  ${ message.format_posted_time }
+                  </div>
+                  <div class='group-message__post-message'>
+                  ${ message.body}
+                  <img src="${ message.image }" alt="" />
+                  </div>
+                </div>`
+
+    return html;
+  }
+
   $('#new_message').on('submit', function(e){
     e.preventDefault();
-    console.log(this);
     var url = $(this).attr('action');
     var formData = new FormData(this);
     $.ajax({
@@ -12,5 +28,13 @@ $(function(){
       processData: false,
       contentType: false
     })
+    .done(function(data){
+      var html = buildHTML(data);
+      $('.group-messages').append(html);
+      $('.textbox').val('');
+    })
+    .fail(function(response){
+      alert('メッセージ送信失敗');
+    });
   });
 });
