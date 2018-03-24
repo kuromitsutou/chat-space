@@ -33,6 +33,7 @@ $(function(){
       $('.group-messages').append(html);
       $('.textbox').val('');
       $('html,body').animate({scrollTop: $('html,body').prop("scrollHeight")});
+      $('.footer-message-column__send-button').prop('disabled',false);
     })
     .fail(function(response){
       alert('メッセージ送信失敗');
