@@ -75,7 +75,7 @@
 
   .group-messages{
     @include block(100%, 100%, $ivory);
-    min-height: calc(100vh - 100px);
+    min-height: calc(100vh - 190px);
     padding: 46px 40px 0;
 
     .group-message{
