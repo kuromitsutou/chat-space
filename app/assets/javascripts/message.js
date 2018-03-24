@@ -32,6 +32,7 @@ $(function(){
       var html = buildHTML(data);
       $('.group-messages').append(html);
       $('.textbox').val('');
+      $('html,body').animate({scrollTop: $('html,body').prop("scrollHeight")});
     })
     .fail(function(response){
       alert('メッセージ送信失敗');
