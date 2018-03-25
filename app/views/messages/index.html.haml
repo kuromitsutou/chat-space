@@ -5,23 +5,15 @@
     .header-group-info
       .header-group-info__group-name sample
       .header-group-info__group-edit-button Edit
-      .header-group-info__group-members Members: seo, neko
+      .header-group-info__group-members Members: #{@group.group_user_names}
     .group-messages
-      %ul
-        - @messages.each do |message|
-          %li<
-            .group-message
-              .group-message__user-name
-                = message.user.name
-              .group-message__post-date
-                = message.created_at
-              .group-message__post-message
-                = message.body
+      -@messages.each do |message|
+        = render 'message', message: message
 
     .footer-message-column
-      = form_for [@group, @message] do |f|
-        = f.text_field :body, class: "footer-message-column__input-space", placeholder: "type a message"
+      = form_for [@group, @message], html: {id: 'new_message'} do |f|
+        = f.text_field :body, class: "footer-message-column__input-space textbox", placeholder: "type a message"
         = f.label :image, class: 'footer-message-column__whitespace' do
           %i.fa.fa-image
-          = f.file_field :image, class: 'hidden'
+          = f.file_field :image, class: 'hidden image'
         = f.submit 'Send', class: 'footer-message-column__send-button'
