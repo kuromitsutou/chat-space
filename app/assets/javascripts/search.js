@@ -22,7 +22,7 @@ $(function(){
 
     $.ajax({
         type: 'GET',
-        url: '/users/index',
+        url: '/user',
         data: { keyword: input },
         dataType: 'json'
     })

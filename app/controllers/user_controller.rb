@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class UserController < ApplicationController
 
   def index
     @users = User.where("name LIKE(?)","%#{params[:keyword]}%");
