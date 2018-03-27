@@ -37,7 +37,6 @@ $(document).on('turbolinks:load', function() {
       }
     })
     .fail(function(response){
-      console.log(response);
       alert('ユーザー検索に失敗しました');
     })
   });
