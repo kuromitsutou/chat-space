@@ -1,4 +1,3 @@
-// $(function(){
 $(document).on('turbolinks:load', function() {
   function buildHTML(message){
     var html = `<div class='group-message'>
