@@ -1,5 +1,5 @@
 %div{id: "chat-group-user-#{user.id}", class: "chat-group-user clearfix"}
-  %input{name: "group[user_ids][]", type: "hidden", value: "#{user.id}"}/
+  = hidden_field_tag 'group[user_ids][]', user.id, id: ''
   %p.chat-group-user__name
     = user.name
   - unless user.id == current_user.id
