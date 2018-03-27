@@ -52,7 +52,7 @@
   padding-left: 300px;
 
   .header-group-info{
-    @include block(100%, 100px, $white);
+    @include block(calc(100% - 300px), 100px, $white);
     padding: 0 40px;
     position: fixed;
 
@@ -73,6 +73,17 @@
       padding: 10px 20px;
       margin-top: 28px;
       float: right;
+
+      a{
+        text-decoration: none;
+
+        &:link{
+          color: $lightskyblue;
+        }
+        &:visited{
+          color: $lightskyblue;
+        }
+      }
     }
   }
 
