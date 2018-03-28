@@ -1,7 +1,6 @@
-// $(function(){
 $(document).on('turbolinks:load', function() {
   function buildHTML(message){
-    var html = `<div class='group-message'>
+    var html = `<div id='message-${ message.id }', class='group-message'>
                   <div class='group-message__user-name'>
                   ${ message.name }
                   </div>
