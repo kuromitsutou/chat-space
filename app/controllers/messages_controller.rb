@@ -5,6 +5,12 @@ class MessagesController < ApplicationController
     @message = Message.new
     @messages = @group.messages.includes(:user)
 
+    if params[:max_message_id].present?
+      @messages = @messages.where("id > #{params[:max_message_id]}").includes(:user)
+    elsif params[:keyword].present?
+      @messages = @messages.where("body LIKE(?)","%#{params[:keyword]}%").includes(:user)
+    end
+
     respond_to do |format|
       format.html
       format.json

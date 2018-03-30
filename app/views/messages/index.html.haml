@@ -5,6 +5,7 @@
     .header-group-info
       .header-group-info__group-name
         = @group.name
+        %i.fa.fa-search-plus
       .header-group-info__group-edit-button
         = link_to "Edit", edit_group_path(@group.id) 
       .header-group-info__group-members Members: #{@group.group_user_names}

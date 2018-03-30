@@ -16,6 +16,12 @@
       float: left;
     }
 
+    .fa-bars{
+      color: $white;
+      float: left;
+      margin-right: 15px;
+    }
+
     .fa-cog{
       color: $white;
       float: right;
@@ -48,7 +54,7 @@
 }
 
 .main-content{
-  @include block(100vw, 100%, $white, left);
+  @include block(100vw, 100vh, $white, left);
   padding-left: 300px;
 
   .header-group-info{
