@@ -100,6 +100,8 @@
     
     .group-message{
 
+      padding-bottom: 40px;
+
       &__user-name{
         @include font(16px, $slategray , bold);
         padding: 0 10px 10px 0;
@@ -113,8 +115,12 @@
 
       &__post-message{
         @include font(14px, $slategray);
-        padding-bottom: 40px;
+        padding-bottom: 10px;
         clear: both;
+      }
+
+      .fa-heart{
+        color: red;
       }
     }
   }

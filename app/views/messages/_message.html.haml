@@ -7,3 +7,7 @@
     - if message.body.present?
       = message.body
     = image_tag message.image.url if message.image.present?
+  - if message.favorites.present?
+    .i.fa.fa-heart message.favorite_count
+  - else
+    .i.fa.fa-heart-o
