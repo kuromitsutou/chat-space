@@ -13,4 +13,8 @@ class Message < ApplicationRecord
   def favorite_count
     self.favorites.count
   end
+
+  def has_user_favorite(user_id)
+    self.favorites.find_by(user_id: user_id)
+  end
 end
