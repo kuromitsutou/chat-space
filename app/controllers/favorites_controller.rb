@@ -11,6 +11,17 @@ class FavoritesController < ApplicationController
     end
   end
 
+  def destroy
+    @favorite = Favorite.find(params[:id])
+    @delete_success = @favorite.destroy
+    @favorite_count = Favorite.where(message_id: params[:message_id]).count
+
+    respond_to do |format|
+      format.html
+      format.json
+    end
+  end
+
   private
 
   def favorite_params
