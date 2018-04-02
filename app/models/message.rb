@@ -11,10 +11,11 @@ class Message < ApplicationRecord
   end
 
   def favorite_count
-    self.favorites.count
+    self.favorites.present? ? self.favorites.count : 0
   end
 
-  def has_user_favorite(user_id)
-    self.favorites.find_by(user_id: user_id)
+  def users_favorite_id(user_id)
+    users_favorite = self.favorites.find_by(user_id: user_id)
+    users_favorite.present? ? users_favorite.id : 0
   end
 end

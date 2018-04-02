@@ -8,11 +8,12 @@
       = message.body
     = image_tag message.image.url if message.image.present?
   - if message.favorites.present?
-    - if message.has_user_favorite(current_user.id)
-      .i.fa.fa-heart
+    - if message.users_favorite_id(current_user.id) != 0
+      %div{id: "favorite-#{message.users_favorite_id(current_user.id)}", class: "i fa fa-heart" }
         = message.favorite_count
     - else
       .i.fa.fa-heart-o
         = message.favorite_count
   - else
     .i.fa.fa-heart-o
+      0
