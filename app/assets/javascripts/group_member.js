@@ -11,6 +11,7 @@ $(document).on('turbolinks:load', function() {
     user_list.append(html);
   }
 
+  $(document).off('click', '.chat-group-user__btn--add');
   $(document).on('click', '.chat-group-user__btn--add', function(){
     var user_id = $(this).attr('data-user-id');
     var user_name = $(this).attr('data-user-name');
@@ -18,6 +19,7 @@ $(document).on('turbolinks:load', function() {
     appendUser(user_id, user_name)
   });
 
+  $(document).off('click', '.chat-group-user__btn--remove');
   $(document).on('click', '.chat-group-user__btn--remove', function(){
     $(this).parent().remove();
   });

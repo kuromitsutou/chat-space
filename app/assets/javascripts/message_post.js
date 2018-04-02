@@ -11,6 +11,8 @@ $(document).on('turbolinks:load', function() {
                   ${ message.body}
                   <img src="${ message.image }" alt="" />
                   </div>
+                  <div class="i fa fa-heart-o"> 0
+                  </div>
                 </div>`
 
     return html;
