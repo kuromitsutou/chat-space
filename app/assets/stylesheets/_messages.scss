@@ -54,7 +54,7 @@
 }
 
 .main-content{
-  @include block(100vw, 100vh, $white, left);
+  @include block(100vw, 100%, $white, left);
   padding-left: 300px;
 
   .header-group-info{
@@ -95,10 +95,12 @@
 
   .group-messages{
     @include block(100%, 100%, $ivory);
-    min-height: calc(100vh - 190px);
+    min-height: 100vh;
     padding: #{calc(46px + 100px)} 40px 90px;
     
     .group-message{
+
+      padding-bottom: 40px;
 
       &__user-name{
         @include font(16px, $slategray , bold);
@@ -113,8 +115,17 @@
 
       &__post-message{
         @include font(14px, $slategray);
-        padding-bottom: 40px;
+        padding-bottom: 10px;
         clear: both;
+      }
+
+      .fa-heart{
+        color: red;
+        font-size: 12px;
+      }
+
+      .fa-heart-o{
+        font-size: 12px;
       }
     }
   }

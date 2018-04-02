@@ -12,6 +12,7 @@ $(document).on('turbolinks:load', function() {
                   ${ message.body}
                   <img src="${ message.image }" alt="" />
                   </div>
+                  <div class="i fa ${ message.favorite_class }"> ${ message.favorite_count }</div>
                 </div>`
 
     return html;
@@ -36,11 +37,13 @@ $(document).on('turbolinks:load', function() {
         data: { max_message_id: max_message_id }
       })
       .done(function(messages){
-        messages.forEach(function(message){
-          var html = buildHTML(message);
-          $('.group-messages').append(html);
-          $('html,body').animate({scrollTop: $('html,body').prop("scrollHeight")});
-        });
+        if(messages.length !== 0){
+          messages.forEach(function(message){
+            var html = buildHTML(message);
+            $('.group-messages').append(html);
+            $('html,body').animate({scrollTop: $('html,body').prop("scrollHeight")});
+          });
+        }
       })
     }
 

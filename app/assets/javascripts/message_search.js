@@ -14,6 +14,7 @@ $(document).on('turbolinks:load', function() {
                   ${ message.body}
                   <img src="${ message.image }" alt="" />
                   </div>
+                  <div class="i fa ${ message.favorite_class }"> ${ message.favorite_count }</div>
                 </div>`
     return html;
   }
@@ -29,6 +30,7 @@ $(document).on('turbolinks:load', function() {
     group_messages_list = $('div.group-message');
   });
 
+  $(document).off('click', '.fa-search-minus');
   $(document).on('click', '.fa-search-minus', function(){
     $('#user-search-field').remove();
     $('.fa-search').remove();
@@ -39,6 +41,7 @@ $(document).on('turbolinks:load', function() {
     $('.group-messages').append(group_messages_list);
   });
 
+  $(document).off('click', '.fa-search');
   $(document).on('click', '.fa-search', function(){
     var input = $('#user-search-field').val();
 

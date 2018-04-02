@@ -4,6 +4,7 @@ class MessagesController < ApplicationController
   def index
     @message = Message.new
     @messages = @group.messages.includes(:user)
+    @current_user_id = current_user.id
 
     if params[:max_message_id].present?
       @messages = @messages.where("id > #{params[:max_message_id]}").includes(:user)
