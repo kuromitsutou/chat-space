@@ -40,6 +40,7 @@ $(document).on('turbolinks:load', function() {
         messages.forEach(function(message){
           var html = buildHTML(message);
           $('.group-messages').append(html);
+          $('#message-' + message.id).hide().animate({ opacity: 'show'}, { duration: 300, easing: 'swing'});
         });
       }
     })

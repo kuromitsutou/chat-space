@@ -7,5 +7,6 @@ if @save_success
 end
 json.favorite_count 0
 json.favorite_class "fa-heart-o"
+json.message_trash_class "fa-trash"
 json.save_success @save_success
 json.flash_message @flash_message

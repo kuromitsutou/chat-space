@@ -17,6 +17,7 @@ $(document).on('turbolinks:load', function() {
       if(data.save_success){
         var html = buildHTML(data);
         $('.group-messages').append(html);
+        $('#message-' + data.id).hide().animate({ opacity: 'show'}, { duration: 800, easing: 'swing'});
         $('.textbox').val('');
         $('.image').val('');
         $('html,body').animate({scrollTop: $('html,body').prop("scrollHeight")});

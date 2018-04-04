@@ -11,6 +11,7 @@ function buildHTML(message){
                 <img src="${ message.image }" alt="" />
                 </div>
                 <div class="i fa ${ message.favorite_class }"> ${ message.favorite_count }</div>
+                <div class="i fa ${ message.message_trash_class }"></div>
               </div>`
 
   return html;
