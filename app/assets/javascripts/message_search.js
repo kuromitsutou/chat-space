@@ -2,23 +2,6 @@ $(document).on('turbolinks:load', function() {
 
   var group_messages_list = $('group-message');
 
-  function buildHTML(message){
-    var html = `<div id='message-${ message.id }', class='group-message'>
-                  <div class='group-message__user-name'>
-                  ${ message.name }
-                  </div>
-                  <div class='group-message__post-date'>
-                  ${ message.format_posted_time }
-                  </div>
-                  <div class='group-message__post-message'>
-                  ${ message.body}
-                  <img src="${ message.image }" alt="" />
-                  </div>
-                  <div class="i fa ${ message.favorite_class }"> ${ message.favorite_count }</div>
-                </div>`
-    return html;
-  }
-
   $('.fa-search-plus').on('click', function(){
     var search_filed = `<input id="user-search-field" type="text" name="keyword" size="38" placeholder="検索したいメッセージを入力してください">
                         <i class="fa fa-search"></i>

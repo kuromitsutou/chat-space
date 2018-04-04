@@ -1,23 +1,5 @@
 $(document).on('turbolinks:load', function() {
 
-  function buildHTML(message){
-    var html = `<div id='message-${ message.id }', class='group-message'>
-                  <div class='group-message__user-name'>
-                  ${ message.name }
-                  </div>
-                  <div class='group-message__post-date'>
-                  ${ message.format_posted_time }
-                  </div>
-                  <div class='group-message__post-message'>
-                  ${ message.body}
-                  <img src="${ message.image }" alt="" />
-                  </div>
-                  <div class="i fa ${ message.favorite_class }"> ${ message.favorite_count }</div>
-                </div>`
-
-    return html;
-  }
-
   setInterval(function(){
     if(document.URL.match(/groups\/\d+\/messages/) !== null && !$('#user-search-field').size()){
 
