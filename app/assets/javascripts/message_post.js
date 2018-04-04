@@ -1,22 +1,4 @@
 $(document).on('turbolinks:load', function() {
-  function buildHTML(message){
-    var html = `<div id='message-${ message.id }', class='group-message'>
-                  <div class='group-message__user-name'>
-                  ${ message.name }
-                  </div>
-                  <div class='group-message__post-date'>
-                  ${ message.format_posted_time }
-                  </div>
-                  <div class='group-message__post-message'>
-                  ${ message.body}
-                  <img src="${ message.image }" alt="" />
-                  </div>
-                  <div class="i fa fa-heart-o"> 0
-                  </div>
-                </div>`
-
-    return html;
-  }
 
   $('#new_message').on('submit', function(e){
     e.preventDefault();
@@ -31,11 +13,15 @@ $(document).on('turbolinks:load', function() {
       contentType: false
     })
     .done(function(data){
-      var html = buildHTML(data);
-      $('.group-messages').append(html);
-      $('.textbox').val('');
-      $('.image').val('');
-      $('html,body').animate({scrollTop: $('html,body').prop("scrollHeight")});
+      HideNotification();
+      if(data.save_success){
+        var html = buildHTML(data);
+        $('.group-messages').append(html);
+        $('.textbox').val('');
+        $('.image').val('');
+        $('html,body').animate({scrollTop: $('html,body').prop("scrollHeight")});
+      }
+      ShowNotification(data.save_success ? "notice" : "alert" , data.flash_message);
       $('.footer-message-column__send-button').prop('disabled',false);
     })
     .fail(function(response){
