@@ -20,8 +20,6 @@ class MessagesController < ApplicationController
 
   def create
     @message = @group.messages.new(message_params)
-    @save_success
-    @flash_message
 
     if @message.save
       @save_success = true
@@ -29,6 +27,24 @@ class MessagesController < ApplicationController
     else
       save_success = false
       @flash_message = 'メッセージを入力してください。'
+    end
+
+    respond_to do |format|
+      format.html { redirect_to group_messages_path(@group) }
+      format.json
+    end
+
+  end
+
+  def destroy
+    @message = Message.find(params[:id])
+    
+    if @message.destroy
+      @destroy_success = true
+      @flash_message = 'メッセージが削除されました'
+    else
+      @destroy_success = false
+      @flash_message = 'メッセージの削除に失敗しました'
     end
 
     respond_to do |format|
