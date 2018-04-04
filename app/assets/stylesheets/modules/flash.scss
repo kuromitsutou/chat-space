@@ -1,4 +1,8 @@
 .notification{
+  position: fixed;
+  width: 100%;
+  clear: both;
+
   .notice{
     background-color: $skyblue;
     color: $white;

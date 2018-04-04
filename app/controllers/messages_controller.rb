@@ -20,13 +20,15 @@ class MessagesController < ApplicationController
 
   def create
     @message = @group.messages.new(message_params)
+    @save_success
+    @flash_message
+
     if @message.save
-      flash.now[:notice] = 'メッセージが送信されました'
-      # redirect_to group_messages_path(@group), notice: 'メッセージが送信されました'
+      @save_success = true
+      @flash_message = 'メッセージが送信されました'
     else
-      @messages = @group.messages.includes(:user)
-      flash.now[:alert] = 'メッセージを入力してください。'
-      render :index
+      save_success = false
+      @flash_message = 'メッセージを入力してください。'
     end
 
     respond_to do |format|

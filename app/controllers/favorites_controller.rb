@@ -1,4 +1,5 @@
 class FavoritesController < ApplicationController
+  before_action :set_favorite, only: :destroy
 
   def create
     @favorite = Favorite.new(favorite_params)
@@ -12,7 +13,6 @@ class FavoritesController < ApplicationController
   end
 
   def destroy
-    @favorite = Favorite.find(params[:id])
     @delete_success = @favorite.destroy
     @favorite_count = Favorite.where(message_id: params[:message_id]).count
 
@@ -23,6 +23,10 @@ class FavoritesController < ApplicationController
   end
 
   private
+
+  def set_favorite
+    @favorite = Favorite.find(params[:id])
+  end
 
   def favorite_params
     params.permit(:message_id).merge(user_id: current_user.id)
