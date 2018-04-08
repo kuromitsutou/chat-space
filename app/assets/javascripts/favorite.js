@@ -15,10 +15,13 @@ $(document).on('turbolinks:load', function() {
     })
     .done(function(data){
       if(data.success){
+
+        var html = `<div class="i fa fa-heart-o"> ${ data.favorite_count }</div>`;
         var favorite = $('#favorite-' + favorite_id);
+
         favorite.remove();
         var group_message = $('#message-' + message_id);
-        group_message.append(`<div class="i fa fa-heart-o"> ${ data.favorite_count }</div>`);
+        $(html).insertBefore(group_message.children('.fa-edit'));
       }else{
         alert('お気に入り取消失敗');
       }
@@ -42,8 +45,11 @@ $(document).on('turbolinks:load', function() {
     })
     .done(function(data){
       if(data.success){
+
+        var html = `<div id="favorite-${ data.id }" class="i fa fa-heart"> ${ data.favorite_count }</div>`;
         var group_message = $('#message-' + message_id);
-        group_message.append(`<div id="favorite-${ data.id }" class="i fa fa-heart"> ${ data.favorite_count }</div>`);
+
+        $(html).insertBefore(group_message.children('.fa-edit'));
         group_message.children('.fa-heart-o').remove();
       }else{
         alert('お気に入り登録失敗');
