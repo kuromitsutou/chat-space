@@ -12,7 +12,7 @@
     padding: 45px 20px;
 
     &__user-name{
-      @include font(16px, $white, bold);
+      @include font(18px, $white, bold);
       float: left;
     }
 
@@ -41,12 +41,12 @@
     .member-group{
 
       &__group-name{
-        @include font(15px, $white);
+        @include font(18px, $white);
         margin-bottom: 5px;
       }
 
       &__group-last-message{
-        @include font(11px, $white);
+        @include font(14px, $white);
         margin-bottom: 40px;
       }
     }
@@ -59,25 +59,27 @@
 
   .header-group-info{
     @include block(calc(100% - 300px), 100px, $white);
+    min-width: 1000px;
     padding: 0 40px;
     position: fixed;
 
     &__group-name{
-      @include font(20px, $black);
+      @include font(22px, $black);
       padding: 35px 0 15px;
       float: left;
     }
 
     &__group-members{
-      @include font(12px, $gray);
+      @include font(15px, $gray);
       clear: both;
     }
 
     &__group-edit-button{
-      @include font(12px, $lightskyblue, bold);
+      @include font(15px, $lightskyblue, bold);
       @include border(2px, $lightskyblue, solid);
       padding: 10px 20px;
       margin-top: 28px;
+      border-radius: 10px;
       float: right;
 
       a{
@@ -95,27 +97,29 @@
 
   .group-messages{
     @include block(100%, 100%, $ivory);
+    min-width: 1000px;
     min-height: 100vh;
     padding: #{calc(46px + 100px)} 40px 90px;
-    
+
     .group-message{
 
       padding-bottom: 40px;
 
       &__user-name{
-        @include font(16px, $slategray , bold);
+        @include font(18px, $slategray , bold);
         padding: 0 10px 10px 0;
         float: left;
       }
 
       &__post-date{
-        @include font(12px, $gray);
+        @include font(15px, $gray);
         padding-top: 4px;
       }
 
       &__post-message{
-        @include font(14px, $slategray);
-        padding-bottom: 10px;
+        @include font(17px, $slategray);
+        padding-bottom: 30px;
+        margin-top: 20px;
         clear: both;
       }
 
@@ -148,19 +152,22 @@
 
   .footer-message-column{
     @include block(100%, 90px, $floralwhite);
+    min-width: 1000px;
     position: fixed;
     bottom: 0;
     padding: 20px 40px 20px 50px;
 
     &__input-space{
-      @include font(12px, $black);
+      @include font(15px, $black);
       @include block(#{calc(100% - 480px)}, 50px, $white, left, content-box);
       border: none;
       padding-left: 10px;
+      border-radius: 10px 0 0 10px;
     }
 
     &__whitespace{
       @include block(40px, 50px, $white, left, content-box);
+      border-radius: 0 10px 10px 0;
 
       .fa-image{
         color: $black;
@@ -174,10 +181,12 @@
     }
 
     &__send-button{
-      @include font(16px, $white);
+      @include font(18px, $white);
       @include block(30px, 16px, #38AEF0, left, content-box);
-      padding: 15px 40px;
+      // padding: 15px 40px;
+      padding: 15px 50px 15px 40px;
       margin-left: 25px;
+      border-radius: 10px;
     }
   }
 }
