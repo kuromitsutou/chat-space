@@ -5,7 +5,7 @@ $(document).on('turbolinks:load', function() {
     $(this).prop('disabled', true);
 
     var favorite_id = $(this).attr('id').match(/\d+/);
-    var message_id = $(this).parent().attr('id').match(/\d+/);
+    var message_id = $(this).parent().parent().attr('id').match(/\d+/);
     var url = document.URL + '/' + message_id + '/favorites/' + favorite_id;
 
     $.ajax({
@@ -17,11 +17,11 @@ $(document).on('turbolinks:load', function() {
       if(data.success){
 
         var html = `<div class="i fa fa-heart-o"> ${ data.favorite_count }</div>`;
+        var group_message = $('#message-' + message_id);
         var favorite = $('#favorite-' + favorite_id);
 
+        $(html).insertBefore(favorite);
         favorite.remove();
-        var group_message = $('#message-' + message_id);
-        $(html).insertBefore(group_message.children('.fa-edit'));
       }else{
         alert('お気に入り取消失敗');
       }
@@ -35,7 +35,7 @@ $(document).on('turbolinks:load', function() {
   $(document).on('click', '.fa-heart-o', function(){
     $(this).prop('disabled', true);
 
-    var message_id = $(this).parent().attr('id').match(/\d+/);
+    var message_id = $(this).parent().parent().attr('id').match(/\d+/);
     var url = document.URL + '/' + message_id + '/favorites';
 
     $.ajax({
@@ -48,9 +48,13 @@ $(document).on('turbolinks:load', function() {
 
         var html = `<div id="favorite-${ data.id }" class="i fa fa-heart"> ${ data.favorite_count }</div>`;
         var group_message = $('#message-' + message_id);
+        var favorite = group_message.find('.fa-heart-o');
 
-        $(html).insertBefore(group_message.children('.fa-edit'));
-        group_message.children('.fa-heart-o').remove();
+        $(html).insertBefore(favorite);
+        favorite.remove();
+
+        $('#favorite-' + data.id).animate({'font-size' : 20}, 400);
+        $('#favorite-' + data.id).animate({'font-size' : 15}, 200);
       }else{
         alert('お気に入り登録失敗');
       }

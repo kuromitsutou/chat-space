@@ -5,9 +5,10 @@
     .header-group-info
       .header-group-info__group-name
         = @group.name
+        %input{id: "user-search-field", type: :text, name: "keyword", placeholder: "Enter a search word"}
         %i.fa.fa-search-plus
-      .header-group-info__group-edit-button
-        = link_to "Edit", edit_group_path(@group.id) 
+      = link_to edit_group_path(@group.id) do
+        .header-group-info__group-edit-button.btn Edit
       .header-group-info__group-members Members: #{@group.group_user_names}
     .group-messages
       -@messages.each do |message|

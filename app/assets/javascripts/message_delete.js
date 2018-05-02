@@ -7,7 +7,7 @@ $(document).on('turbolinks:load', function() {
       $(this).prop('disabled', false);
       return;
     }
-    var message_id = $(this).parent().attr('id').match(/\d+/);
+    var message_id = $(this).parent().parent().attr('id').match(/\d+/);
     var url = document.URL + '/' + message_id;
 
     $.ajax({
@@ -18,7 +18,7 @@ $(document).on('turbolinks:load', function() {
     .done(function(data){
       HideNotification();
       if(data.destroy_success){
-        var group_message = $('#message-' + message_id);
+        var group_message = $('#message-' + message_id).parent();
         group_message.animate({ opacity: 'hide'}, { duration: 500, easing: 'swing'});
       }
       ShowNotification(data.destroy_success ? "notice" : "alert" , data.flash_message);

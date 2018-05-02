@@ -15,7 +15,7 @@ $(document).on('turbolinks:load', function() {
     .done(function(data){
       HideNotification();
       if(data.save_success){
-        var html = buildHTML(data);
+        var html = CreatePostHTML(data);
         $('.group-messages').append(html);
         $('#message-' + data.id).hide().animate({ opacity: 'show'}, { duration: 800, easing: 'swing'});
         $('.textbox').val('');
