@@ -1,5 +1,6 @@
 class MessagesController < ApplicationController
   before_action :set_group
+  before_action :set_message, only: [:destroy, :update]
 
   def index
     @message = Message.new
@@ -37,14 +38,29 @@ class MessagesController < ApplicationController
   end
 
   def destroy
-    @message = Message.find(params[:id])
-    
+
     if @message.destroy
       @destroy_success = true
       @flash_message = 'メッセージが削除されました'
     else
       @destroy_success = false
       @flash_message = 'メッセージの削除に失敗しました'
+    end
+
+    respond_to do |format|
+      format.html { redirect_to group_messages_path(@group) }
+      format.json
+    end
+
+  end
+
+  def update
+    if @message.update(message_params)
+      @update_success = true
+      @flash_message = 'メッセージが更新されました'
+    else
+      @update_success = false
+      @flash_message = 'メッセージの更新に失敗しました'
     end
 
     respond_to do |format|
@@ -62,6 +78,10 @@ class MessagesController < ApplicationController
 
   def set_group
     @group = Group.find(params[:group_id])
+  end
+
+  def set_message
+    @message = Message.find(params[:id])
   end
 
 end
