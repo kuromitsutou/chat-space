@@ -20,17 +20,29 @@
       color: $white;
       float: left;
       margin-right: 15px;
+
+      &:hover{
+        cursor: pointer;
+      }
     }
 
     .fa-cog{
       color: $white;
       float: right;
       margin-left: 10px;
+
+      &:hover{
+        cursor: pointer;
+      }
     }
 
     .fa-edit{
       color: $white;
       float: right;
+
+      &:hover{
+        cursor: pointer;
+      }
     }
   }
 
@@ -61,6 +73,7 @@
     @include block(calc(100% - 300px), 100px, $white);
     min-width: 1000px;
     padding: 0 40px;
+    z-index: 10;
     position: fixed;
 
     &__group-name{
@@ -93,6 +106,25 @@
         }
       }
     }
+
+    .fa-search,.fa-search-plus,.fa-search-minus{
+      font-size: 18px;
+
+      &:hover{
+        cursor: pointer;
+      }
+    }
+
+    #user-search-field{
+      height: 18px;
+      width: 400px;
+      display: none;
+      border: 1px solid black;
+      border-radius: 5px;
+      font-size: 14px;
+      margin-left: 10px;
+      margin-bottom: -4px;
+    }
   }
 
   .group-messages{
@@ -103,50 +135,141 @@
 
     .group-message{
 
-      padding-bottom: 40px;
+      padding-bottom: 30px;
 
       &__user-name{
         @include font(18px, $slategray , bold);
-        padding: 0 10px 10px 0;
-        float: left;
-      }
-
-      &__post-date{
-        @include font(15px, $gray);
-        padding-top: 4px;
+        padding: 20px 20px 0 0;
+        display: table-cell;
+        vertical-align: top;
       }
 
       &__post-message{
         @include font(17px, $slategray);
-        padding-bottom: 30px;
-        margin-top: 20px;
-        clear: both;
+        width: 700px;
+        padding: 20px;
+        display: table-cell;
+        word-break: break-all;
+
+        &__menu{
+          width: 100px;
+          height: 10px;
+          padding: 5px;
+          float: right;
+
+          .fa-heart{
+            color: red;
+            font-size: 15px;
+            padding-right: 10px;
+            float: left;
+
+            &:hover{
+              cursor: pointer;
+            }
+          }
+
+          .fa-heart-o{
+            font-size: 15px;
+            padding-right: 10px;
+            float: left;
+
+            &:hover{
+              cursor: pointer;
+            }
+          }
+
+          .fa-trash{
+            font-size: 15px;
+            padding-right: 10px;
+            float: left;
+
+            &:hover{
+              cursor: pointer;
+            }
+          }
+
+          .fa-edit{
+            font-size: 15px;
+            padding-right: 10px;
+            float: left;
+
+            &:hover{
+              cursor: pointer;
+            }
+          }
+        }
+
+        &__post-date{
+          @include font(12px, $gray);
+          margin-top: 5px;
+          display: inline-block;
+          float: right;
+        }
+      }
+    }
+
+    .group-message__edit-form{
+      @include block(100%, 60px, $floralwhite);
+      width: 740px;
+      padding: 10px 20px 10px 20px;
+      border-radius: 10px;
+      margin-left: 90px;
+
+      &__input-space{
+        @include font(15px, $black);
+        @include block(580px, 40px, $white, left, content-box);
+        border: none;
+        padding-left: 10px;
+        border-radius: 10px 10px 10px 10px;
+
+        &:focus{
+         outline: none;
+        }
       }
 
-      .fa-heart{
-        color: red;
-        font-size: 12px;
-        padding-right: 10px;
-        float: left;
+      &__send-button{
+        @include font(18px, $white);
+        @include block(30px, 16px, #38AEF0, left, content-box);
+        padding: 10px 35px 10px 15px;
+        margin-left: 20px;
+        border-radius: 10px;
       }
+    }
+  }
 
-      .fa-heart-o{
-        font-size: 12px;
-        padding-right: 10px;
-        float: left;
-      }
+  .my-message{
+    position: relative; 
+    margin: 5px 0 0 15px;
+    padding: 17px 13px;
+    border-radius: 12px;
+    background: #d7ebfe;
 
-      .fa-trash{
-        font-size: 14px;
-        padding-right: 10px;
-        float: left;
-      }
+    &:after{
+      content: "";
+      display: inline-block;
+      position: absolute;
+      top: 18px;
+      left: -24px;
+      border: 12px solid transparent;
+      border-right: 12px solid #d7ebfe;
+    }
+  }
 
-      .fa-edit{
-        font-size: 15px;
-        padding-right: 10px;
-        float: left;
-      }
+  .others-message{
+    position: relative; 
+    margin: 5px 0 0 15px;
+    padding: 17px 13px;
+    border-radius: 12px;
+    background: #d7ead1;
+
+    &:after{
+      content: "";
+      display: inline-block;
+      position: absolute;
+      top: 18px;
+      left: -24px;
+      border: 12px solid transparent;
+      border-right: 12px solid #d7ead1;
     }
   }
 
@@ -155,14 +278,18 @@
     min-width: 1000px;
     position: fixed;
     bottom: 0;
-    padding: 20px 40px 20px 50px;
+    padding: 20px 300px 20px 50px;
 
     &__input-space{
       @include font(15px, $black);
-      @include block(#{calc(100% - 480px)}, 50px, $white, left, content-box);
+      @include block(#{calc(100% - 200px)}, 50px, $white, left, content-box);
       border: none;
       padding-left: 10px;
       border-radius: 10px 0 0 10px;
+
+      &:focus{
+       outline: none;
+      }
     }
 
     &__whitespace{
@@ -173,6 +300,10 @@
         color: $black;
         float: right;
         padding: 16px 10px;
+
+        &:hover{
+          cursor: pointer;
+        }
       }
 
       .hidden{
@@ -183,10 +314,13 @@
     &__send-button{
       @include font(18px, $white);
       @include block(30px, 16px, #38AEF0, left, content-box);
-      // padding: 15px 40px;
-      padding: 15px 50px 15px 40px;
+      padding: 15px 50px 15px 30px;
       margin-left: 25px;
       border-radius: 10px;
+
+      &:hover{
+        cursor: pointer;
+      }
     }
   }
 }
