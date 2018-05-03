@@ -13,7 +13,7 @@
 - belongs_to :user
 - has_many   :favorites
 
-## membersテーブル
+## members table
 
 |Column|Type|Options|
 |------|----|-------|
