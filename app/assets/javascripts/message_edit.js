@@ -52,7 +52,7 @@ $(document).on('turbolinks:load', function() {
         var group_message = $('#message-' + data.id);
         group_message.find('.group-message__post-message__message').text(data.body);
         $('#edit_message-' + data.id).parent().animate({ opacity: 'hide'}, { duration: 200, easing: 'swing'});
-        $('#message-' + data.id).hide().animate({ opacity: 'show'}, { duration: 1000, easing: 'swing'});
+        $('#message-' + data.id).hide().animate({ opacity: 'show'}, { duration: 500, easing: 'swing'});
       }
       ShowNotification(data.update_success ? "notice" : "alert" , data.flash_message);
     })
