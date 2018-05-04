@@ -21,6 +21,9 @@ $(document).on('turbolinks:load', function() {
       .done(function(messages){
         if(messages.length !== 0){
           messages.forEach(function(message){
+            if($('#message-' + message.id).size()){
+              continue;
+            }
             var html = CreatePostHTML(message);
             $('.group-messages').append(html);
             $('#message-' + message.id).hide().animate({ opacity: 'show'}, { duration: 800, easing: 'swing'});
