@@ -22,7 +22,7 @@ $(document).on('turbolinks:load', function() {
         if(messages.length !== 0){
           messages.forEach(function(message){
             if($('#message-' + message.id).size()){
-              continue;
+              return;
             }
             var html = CreatePostHTML(message);
             $('.group-messages').append(html);
