@@ -3,7 +3,7 @@ function CreatePostHTML(message){
                 <div class="group-message__user-name">
                 ${ message.name }
                 </div>
-                <div class="group-message__post-message my-message" id="message-${ message.id }">
+                <div class="group-message__post-message ${ message.type }" id="message-${ message.id }">
                   <div class="group-message__post-message__image">
                   <img src="${ message.image }" height="128" alt="" />
                   </div>

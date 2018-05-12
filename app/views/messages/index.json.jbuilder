@@ -8,4 +8,5 @@ json.array! @messages do |message|
   json.favorite_class message.users_favorite_id(@current_user_id) == 0 ? "fa-heart-o" : "fa-heart"
   json.message_edit_class message.user.id == @current_user.id ? "fa-edit fa-message-edit" : ""
   json.message_trash_class message.user.id == @current_user.id ? "fa-trash" : ""
+  json.type message.user.id == @current_user.id ? "my-message" : "others-message"
 end

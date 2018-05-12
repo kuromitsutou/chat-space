@@ -11,3 +11,4 @@ json.message_trash_class "fa-trash"
 json.message_edit_class "fa-edit fa-message-edit"
 json.save_success @save_success
 json.flash_message @flash_message
+json.type "my-message"
